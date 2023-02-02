@@ -10,9 +10,9 @@ const AddProduct = ({showModal,setShowModal,add}) => {
 
   const [product, setProduct] = useState({
     name: "",
-    category: "",
+    category: "electronics",
     description: "",
-    status: "",
+    status: "In stock",
   });
 
   const { name, category, description, status } = product;

@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddProduct from "../components/products/AddProduct";
-import EditProduct from "../components/products/EditProduct";
-import DeleteProduct from "../components/products/DeleteProduct";
 import ProductsList from "../components/products/ProductsList";
 
 import DATA from "../data";
 
 const Products = () => {
   const [showAddModal, setShowAddModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-
+  
   const [allProduct, setAllProduct] = useState(DATA);
   useEffect(() => {
     // const fetchData=async()=>{
@@ -28,19 +24,12 @@ const Products = () => {
    
     let date = new Date().toISOString().split("T")[0];
     let id=new Date().valueOf()
-    let newList = [...allProduct, { ...item, createdAt: date,id  }];
+    let newList = [{ ...item, createdAt: date,id  },...allProduct];
     setAllProduct(newList);
   };
 
-  const deleteProduct = (item) => {
-    console.log("page", item);
-    setShowDeleteModal(true);
-  };
-
-  const editProduct = (item) => {
-    console.log("edit", item);
-  };
-
+  
+ 
   return (
     <>
       <div>
@@ -60,8 +49,7 @@ const Products = () => {
         )}
         <ProductsList
           list={allProduct}
-          remove={deleteProduct}
-          edit={editProduct}
+          setList={setAllProduct}
         />
       </div>
     </>

@@ -1,13 +1,27 @@
+import { render } from "@testing-library/react";
 import { useState } from "react";
-
-const ProductsList = ({ list, edit, remove }) => {
-  const deleteHandler = (item) => {
-    console.log("Delete", item);
-    remove(item);
+import EditProduct from "./EditProduct";
+import DeleteProduct from "./DeleteProduct";
+const ProductsList = ({ list, setList }) => {
+  const remove = (item) => {
+    const del = () => {
+      let newList = list.filter((l) => l.id !== item.id);
+      setList(newList);
+    };
+    render(<DeleteProduct item={item} del={del} />);
   };
 
-  const editHandler = (i) => {
-    console.log("Edit", i);
+  const Edit = (item) => {
+    const update = (product) => {
+      let newList = list.map((l) => {
+        if (l.id === product.id) {
+          return product;
+        } else return l;
+      });
+
+      setList(newList);
+    };
+    render(<EditProduct item={item} update={update} />);
   };
 
   const Item = ({ item }) => {
@@ -21,7 +35,7 @@ const ProductsList = ({ list, edit, remove }) => {
         <td>
           <button
             className="btn btn-block btn-success"
-            onClick={() => editHandler(item)}
+            onClick={() => Edit(item)}
           >
             Edit
           </button>
@@ -29,7 +43,7 @@ const ProductsList = ({ list, edit, remove }) => {
         <td>
           <button
             className="btn btn-block btn-danger"
-            onClick={() => deleteHandler(item)}
+            onClick={() => remove(item)}
           >
             Delete
           </button>
@@ -52,11 +66,15 @@ const ProductsList = ({ list, edit, remove }) => {
             <th scope="col"></th>
           </tr>
         </thead>
-       { list ?<tbody>
-          { list.map((l) => (
-            <Item key={l.id} item={l} />
-          ))}
-        </tbody>:''}
+        {list ? (
+          <tbody>
+            {list.map((l) => (
+              <Item key={l.id} item={l} />
+            ))}
+          </tbody>
+        ) : (
+          ""
+        )}
       </table>
     </div>
   );
