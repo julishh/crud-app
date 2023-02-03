@@ -1,5 +1,5 @@
-import Products from "./pages/Products";
 import Header from './components/Header';
+import MainPage from "./pages/MainPage";
 import {useState} from 'react'
 function App() {
  
@@ -7,7 +7,9 @@ function App() {
    
     <div >
      <Header />
-     <Products /> 
+     <MainPage />
+     {/* <AddModal /> */}
+     {/* <Products />  */}
     </div>
   );
 }
