@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const EditForm = ({ item,setEditModal,editItem }) => {
   const [product, setProduct] = useState(item);
 
-  const { name, category, description, status } = product;
+  const { product_name, category_name, description, status } = product;
 
   const changeHandler = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -16,10 +16,10 @@ const EditForm = ({ item,setEditModal,editItem }) => {
           <label className="form-label">Name</label>
           <input
             type="text"
-            name="name"
+            name="product_name"
             className="form-control"
             placeholder="Name"
-            value={name}
+            value={product_name}
             onChange={changeHandler}
           ></input>
         </div>
@@ -27,9 +27,9 @@ const EditForm = ({ item,setEditModal,editItem }) => {
         <div className="form-group mt-3">
           <label className="form-label">Category</label>
           <select
-            name="category"
+            name="category_name"
             className="form-select"
-            value={category}
+            value={category_name}
             onChange={changeHandler}
           >
             <option value={"electronics"}>electronics</option>
@@ -66,7 +66,7 @@ const EditForm = ({ item,setEditModal,editItem }) => {
 
       <div className="mt-3 d-flex justify-content-end">
         <button
-          disabled={!name || !description}
+          disabled={!product_name || !description}
           className="btn btn-block btn-success me-3"
           onClick={() => editItem(product)}
         >

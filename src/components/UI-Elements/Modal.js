@@ -1,12 +1,15 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom'
 import Card from './Card';
 
 import classes from './Modal.module.css';
 
 const Modal = (props) => {
   return (
-    <div>
+    
+    ReactDOM.createPortal(
+      
+      <div>
       <div className={classes.backdrop} onClick={props.onConfirm} />
       <Card className={classes.modal}>
         <header className={classes.header}>
@@ -19,6 +22,8 @@ const Modal = (props) => {
         
       </Card>
     </div>
+      , document.getElementById('modal'))
+   
   );
 };
 

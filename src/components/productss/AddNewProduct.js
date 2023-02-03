@@ -8,7 +8,7 @@ const AddNewProduct = ({ list, setList }) => {
     let date = new Date().toISOString().split("T")[0];
     let id = new Date().valueOf();
     try {
-      setList([{ ...item, createdAt: date, id }, ...list]);
+      setList([{ ...item, created_at: date, id }, ...list]);
     } catch (err) {
       console.log(err);
     } finally {

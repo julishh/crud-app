@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 const AddForm = ({ addItem, setAddModal }) => {
   const [product, setProduct] = useState({
-    name: "",
-    category: "electronics",
+    product_name: "",
+    category_name: "electronics",
     description: "",
     status: "In stock",
   });
 
-  const { name, category, description, status } = product;
+  const { product_name, category_name, description, status } = product;
 
   const changeHandler = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -23,10 +23,10 @@ const AddForm = ({ addItem, setAddModal }) => {
           <label className="form-label">Name</label>
           <input
             type="text"
-            name="name"
+            name="product_name"
             className="form-control"
             placeholder="Name"
-            value={name}
+            value={product_name}
             onChange={changeHandler}
           ></input>
         </div>
@@ -34,9 +34,9 @@ const AddForm = ({ addItem, setAddModal }) => {
         <div className="form-group mt-3">
           <label className="form-label">Category</label>
           <select
-            name="category"
+            name="category_name"
             className="form-select"
-            value={category}
+            value={category_name}
             onChange={changeHandler}
           >
             <option value={"electronics"}>electronics</option>
@@ -72,7 +72,7 @@ const AddForm = ({ addItem, setAddModal }) => {
       </form>
       <div className="mt-3 d-flex justify-content-end">
         <button
-          disabled={!name || !description}
+          disabled={!product_name || !description}
           className="btn btn-block btn-success me-3"
           onClick={() => addItem(product)}
         >

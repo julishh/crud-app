@@ -1,48 +1,48 @@
 const DATA=[{id:1,
-    name:"Cheese",
-    category:'dairy',
+    product_name:"Cheese",
+    category_name:'dairy',
     description:"Cheese has been used by humans",
-    createdAt:'2021-07-14',
+    created_at:'2021-07-14',
     status:"In stock"
 
 
 },
 
 {id:2,
-    name:"Ghee",
-    category:'dairy',
+    product_name:"Ghee",
+    category_name:'dairy',
     description:"Butter, mostly milk fat, produced by churning cream",
-    createdAt:'2022-03-18',
+    created_at:'2022-03-18',
     status:"in stock"
 
 
 },
 
 {id:3,
-    name:"Yogurt",
-    category:'dairy',
+    product_name:"Yogurt",
+    category_name:'dairy',
     description:"Yogurt, milk femented by thermophilic bacteria.",
-    createdAt:'2022-06-09',
+    created_at:'2022-06-09',
     status:"in stock"
 
 
 },
 
 {id:4,
-    name:"Basundi",
-    category:'dairy',
+    product_name:"Basundi",
+    category_name:'dairy',
     description:"It is sweetend condensed milk made by boiling milk",
-    createdAt:'2022-06-09',
+    created_at:'2022-06-09',
     status:"Out of stock"
 
 
 },
 
 {id:5,
-    name:"Wood chair",
-    category:'furniture',
+    product_name:"Wood chair",
+    category_name:'furniture',
     description:"Comfortable and affordable",
-    createdAt:'2019-06-09',
+    created_at:'2019-06-09',
     status:"In stock"
 
 

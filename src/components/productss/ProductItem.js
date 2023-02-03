@@ -37,10 +37,10 @@ const ProductItem = ({ item, list, setList }) => {
   return (
     <>
       <tr>
-        <td scope="row">{item.name}</td>
-        <td>{item.category}</td>
+        <td scope="row">{item.product_name}</td>
+        <td>{item.category_name}</td>
         <td>{item.description}</td>
-        <td>{item.createdAt}</td>
+        <td>{item.created_at.split('T')[0]}</td>
         <td>{item.status}</td>
         <td>
           <button
