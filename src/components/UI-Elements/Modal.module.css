@@ -9,7 +9,7 @@
   }
   
   .modal {
-    position: fixed;
+    position:fixed;
     top: 5vh;
     left: 10%;
     width: 80%;

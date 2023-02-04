@@ -6,9 +6,9 @@ const ProductList = ({list, setList}) => {
    
    
   return (
-    <div className='mt-5'>
-<table className="table ">
-        <thead>
+    <div className=' table-responsive mt-5'>
+<table className="table table-striped">
+        <thead className='thead-dark'>
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Category</th>

@@ -17,7 +17,7 @@ const AddForm = ({ addItem, setAddModal }) => {
   
 
   return (
-    <div>
+    <>
       <form>
         <div className="form-group ">
           <label className="form-label">Name</label>
@@ -85,7 +85,7 @@ const AddForm = ({ addItem, setAddModal }) => {
           Cancel
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

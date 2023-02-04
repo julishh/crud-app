@@ -1,0 +1,29 @@
+.addsearch{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+
+.addbtn{
+    max-width: 200px;
+    
+}
+
+.search{
+    width:70%;
+margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .addsearch{
+        display: flex;
+        flex-direction: row;
+         justify-content: space-between;
+    }
+
+    .search{
+        width:20rem;
+        margin-top:0 ;
+    }
+  }

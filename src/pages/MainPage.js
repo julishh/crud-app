@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import{ useEffect, useState } from "react";
 import axios from "axios";
 import AddNewProduct from "../components/productss/AddNewProduct";
 import ProductList from "../components/productss/ProductList";
 import SearchForm from "../components/productss/SearchForm";
-import DATA from "../data";
-
-import classes from "./MainPage.module.css";
+//import DATA from "../data";
+import './MainPage.css'
 
 const MainPage = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -19,17 +18,15 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div >
-      {/* <div className='card mx-auto' style={{maxWidth:"600px"}}>
-        <div className='card-body '  ><input className='form-control'></input></div>
-      </div> */}
-      <div className="d-flex justify-content-between mt-3 ">
+    < >
+     <hr></hr>
+      <div className='addsearch'>
         <AddNewProduct list={allProducts} setList={setAllProducts} />
         <SearchForm list={allProducts} />
       </div>
 
       <ProductList list={allProducts} setList={setAllProducts} />
-    </div>
+    </>
   );
 };
 

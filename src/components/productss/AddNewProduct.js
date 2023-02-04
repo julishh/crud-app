@@ -29,9 +29,10 @@ const AddNewProduct = ({ list, setList }) => {
     setAddModal(false);
   };
   return (
-    <div>
+    <>
       <button
-        className="btn btn-block btn-primary"
+        className="btn btn-block btn-success addbtn "
+        
         onClick={() => setAddModal(true)}
       >
         Add New Product
@@ -41,7 +42,7 @@ const AddNewProduct = ({ list, setList }) => {
           <AddForm addItem={addItem} setAddModal={setAddModal} />
         </Modal>
       )}
-    </div>
+    </>
   );
 };
 

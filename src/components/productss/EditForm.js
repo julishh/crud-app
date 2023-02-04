@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const EditForm = ({ item,setEditModal,editItem }) => {
   const [product, setProduct] = useState(item);
@@ -10,7 +10,7 @@ const EditForm = ({ item,setEditModal,editItem }) => {
   };
 
   return (
-    <div>
+    <>
       <form>
         <div className="form-group ">
           <label className="form-label">Name</label>
@@ -79,7 +79,7 @@ const EditForm = ({ item,setEditModal,editItem }) => {
           Cancel
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

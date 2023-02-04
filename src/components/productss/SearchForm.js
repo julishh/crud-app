@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 const SearchForm = () => {
   const [category, setCategory] = useState("");
@@ -16,7 +16,7 @@ const SearchForm = () => {
     navigate(`/search-result?category=${category}`);
   };
   return (
-    <form className=" mx-3" onSubmit={submitHandler}>
+    <form className="search" onSubmit={submitHandler}>
       <input
         type="text"
         className="form-control"
