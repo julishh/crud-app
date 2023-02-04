@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import axios from 'axios'
 import Modal from "../UI-Elements/Modal";
 import AddForm from "./AddForm";
 const AddNewProduct = ({ list, setList }) => {
   const [addModal, setAddModal] = useState(false);
+
+
+  // const add = async (item) => {
+  //   try {
+  //     let res = await axios.post("/add-route", item);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
 
   const addItem = (item) => {
     let date = new Date().toISOString().split("T")[0];

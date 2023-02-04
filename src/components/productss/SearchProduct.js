@@ -5,23 +5,18 @@ import ProductList from "./ProductList";
 import SearchForm from "./SearchForm";
 const SearchProduct = () => {
   // const [category,setCategory]=useState('')
-  const [result, setResult] = useState([]);
-  // const location = useLocation();
+  const [result, setResult] = useState("");
+  const location = useLocation();
 
+  // we can call our search backend api here
 
-// we can call our search backend api here 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const category = queryParams.get("category");
+    setResult(category);
+  }, [window.location.search]);
 
- // useEffect(() => {
-  //   const queryParams = new URLSearchParams(location.search);
-  //   const category = queryParams.get("category");
-  //   searchAction(category);
-  // }, [window.location.search]);
-
-  return (
-    <div>
-      <ProductList list={result} />
-    </div>
-  );
+  return <div>Result for your search {result}</div>;
 };
 
 export default SearchProduct;

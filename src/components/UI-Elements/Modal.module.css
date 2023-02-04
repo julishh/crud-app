@@ -28,6 +28,7 @@
   }
   
   .content {
+   
     padding: 1rem;
   }
   
@@ -41,5 +42,9 @@
     .modal {
       left: calc(50% - 20rem);
       width: 40rem;
+    }
+
+    .content{
+      overflow: scroll;
     }
   }

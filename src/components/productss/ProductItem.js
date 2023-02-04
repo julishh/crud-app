@@ -1,10 +1,31 @@
 import React, { useState } from "react";
+import axios from 'axios'
 import Modal from "../UI-Elements/Modal";
 import DeleteForm from "./DeleteForm";
 import EditForm from "./EditForm";
+
 const ProductItem = ({ item, list, setList }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+
+
+
+
+  // const del = async () => {
+  //   try {
+  //     let res = await axios.delete("/delete-route", { id: item.id });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // const update=async()=>{
+  //   try{
+  //     let res=await axios.patch(`/update-route/${item.id}`,{item})
+  //   }catch(err){
+
+  //   }
+  // }
 
   const remove = () => {
     console.log(item);
@@ -38,9 +59,9 @@ const ProductItem = ({ item, list, setList }) => {
     <>
       <tr>
         <td scope="row">{item.product_name}</td>
-        <td>{item.category_name}</td>
-        <td>{item.description}</td>
-        <td>{item.created_at.split('T')[0]}</td>
+        <td >{item.category_name}</td>
+        <td className="w-25">{item.description}</td>
+        <td >{item.created_at.split('T')[0]}</td>
         <td>{item.status}</td>
         <td>
           <button

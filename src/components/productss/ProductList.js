@@ -6,8 +6,8 @@ const ProductList = ({list, setList}) => {
    
    
   return (
-    <div>
-<table className="table">
+    <div className='mt-5'>
+<table className="table ">
         <thead>
           <tr>
             <th scope="col">Name</th>

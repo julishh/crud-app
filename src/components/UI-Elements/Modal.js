@@ -10,7 +10,7 @@ const Modal = (props) => {
     ReactDOM.createPortal(
       
       <div>
-      <div className={classes.backdrop} onClick={props.onConfirm} />
+      <div className={classes.backdrop} />
       <Card className={classes.modal}>
         <header className={classes.header}>
           <h2>{props.title}</h2>

@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-const SearchForm = ({ list, setList }) => {
+const SearchForm = () => {
   const [category, setCategory] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const searchAction = (e) => {
-    e.preventDefault()
-    console.log(category);
-  };
+  // const searchAction = (e) => {
+  //   e.preventDefault()
+  //   console.log(category);
+  // };
 
  
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   navigate(`/search-result?category=${category}`);
-  // };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate(`/search-result?category=${category}`);
+  };
   return (
-    <form onSubmit={searchAction}>
+    <form className=" mx-3" onSubmit={submitHandler}>
       <input
         type="text"
+        className="form-control"
         placeholder="search by category"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
