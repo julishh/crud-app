@@ -13,7 +13,7 @@ const ProductList = ({list, setList}) => {
             <th scope="col">Name</th>
             <th scope="col">Category</th>
             <th scope="col">Description</th>
-            <th scope="col">Created At</th>
+            <th scope="col">Created_At</th>
             <th scope="col">Status</th>
             <th scope="col"></th>
             <th scope="col"></th>

@@ -28,7 +28,7 @@ const ProductItem = ({ item, list, setList }) => {
   // }
 
   const remove = () => {
-    console.log(item);
+    
     try {
       let newList = list.filter((l) => l.id !== item.id);
       setList(newList);
